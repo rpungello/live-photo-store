@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Database\Factories\PhotoFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -9,7 +10,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Photo extends Model
 {
-    use HasFactory, SoftDeletes;
+    /** @use HasFactory<PhotoFactory>
+     */
+    use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = [
         'race_id',
@@ -18,6 +22,9 @@ class Photo extends Model
         'taken_at',
     ];
 
+    /**
+     * @return BelongsTo<Race, $this>
+     */
     public function race(): BelongsTo
     {
         return $this->belongsTo(Race::class);

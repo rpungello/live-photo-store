@@ -15,6 +15,9 @@ class ListEvents extends Component
         return view('livewire.events.list-events');
     }
 
+    /**
+     * @return LengthAwarePaginator<int, Event>
+     */
     #[Computed]
     public function events(): LengthAwarePaginator
     {

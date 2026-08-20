@@ -6,6 +6,9 @@ use App\Models\Event;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 
+/**
+ * @extends Factory<Event>
+ */
 class EventFactory extends Factory
 {
     protected $model = Event::class;

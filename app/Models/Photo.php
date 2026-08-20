@@ -10,10 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Photo extends Model
 {
-    /** @use HasFactory<PhotoFactory>
-     */
-    use HasFactory;
-    use SoftDeletes;
+    /** @use HasFactory<PhotoFactory> */
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'race_id',

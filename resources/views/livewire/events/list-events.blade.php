@@ -7,12 +7,18 @@
         <flux:table.columns>
             <flux:table.column>{{ __('Name') }}</flux:table.column>
             <flux:table.column>{{ __('Date') }}</flux:table.column>
+            <flux:table.column />
         </flux:table.columns>
         <flux:table.rows>
             @foreach($this->events as $event)
                 <flux:table.row>
                     <flux:table.cell>{{ $event->name }}</flux:table.cell>
                     <flux:table.cell>{{ $event->date->format('F j, Y') }}</flux:table.cell>
+                    <flux:table.cell>
+                        <flux:button variant="ghost" size="sm" :href="route('events.edit', $event)">
+                            {{ __('Edit') }}
+                        </flux:button>
+                    </flux:table.cell>
                 </flux:table.row>
             @endforeach
         </flux:table.rows>

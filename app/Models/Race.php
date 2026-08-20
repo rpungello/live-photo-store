@@ -12,8 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Race extends Model
 {
     /** @use HasFactory<RaceFactory> */
-    use HasFactory;
-    use SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'event_id',
